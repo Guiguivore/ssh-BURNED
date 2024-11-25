@@ -11,4 +11,6 @@ Premierementj'ai directement utilisé un outil qui me permet de retranscrire les
 On se retrouve alors avec ça.
 
 ![image](https://github.com/user-attachments/assets/115aa42e-c053-40d4-82d1-73af20a5efa4)
+
+
 On peut en déduire grace à l'image que la clé RSA privée comporte 4096 bits et si on génere d'autre clés cela represente 51 lignes.
