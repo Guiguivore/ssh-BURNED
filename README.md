@@ -14,3 +14,6 @@ On se retrouve alors avec ça.
 
 
 On peut en déduire grace à l'image que la clé RSA privée comporte 4096 bits et si on génere d'autre clés cela represente 51 lignes.
+
+On va essayer de trouver quelles sont les parties lisibles de la clé RSA.
+J'ai remarqué que la clé privé est encodée en PEM(privacy-enhaced mail), elle a comme parametres que c'est toujours encodé dans le meme ordre soit : n ,e ,q ,p ,q ,d (mod p -1), d (mod -1) et q*-1 (mod p).
