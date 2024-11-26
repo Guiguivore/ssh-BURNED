@@ -18,9 +18,26 @@ On peut en déduire grace à l'image que la clé RSA privée comporte 4096 bits 
 On va essayer de trouver quelles sont les parties lisibles de la clé RSA.
 J'ai remarqué que la clé privé est encodée en PEM(privacy-enhaced mail), elle a comme parametres que c'est toujours encodé dans le meme ordre soit : n ,e ,q ,p ,q ,d (mod p -1), d (mod -1) et q*-1 (mod p).
 
-Donc on en déduit le code présent : ![image](https://github.com/user-attachments/assets/a4cd6d1a-172f-4c55-b737-e626a9752180)
+Donc on en déduit le code présent :
 
 ```bash
-#!/bin/bash
-echo "Hello World"
+PrivateKeyInfo ::= SEQUENCE {
+   version Version,
+   privateKeyAlgorithm AlgorithmIdentifier ,
+   privateKey PrivateKey,
+   attributes [0] Attributes OPTIONAL
+}
+
+RSAPrivateKey ::= SEQUENCE {
+  version           Version,
+  modulus           INTEGER,  -- n
+  publicExponent    INTEGER,  -- e
+  privateExponent   INTEGER,  -- d
+  prime1            INTEGER,  -- p
+  prime2            INTEGER,  -- q
+  exponent1         INTEGER,  -- d mod (p-1)
+  exponent2         INTEGER,  -- d mod (q-1)
+  coefficient       INTEGER,  -- (inverse of q) mod p
+  otherPrimeInfos   OtherPrimeInfos OPTIONAL
+}
 ```
