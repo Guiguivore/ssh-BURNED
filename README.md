@@ -84,4 +84,4 @@ p = 0xdb07f3385887095316d266e760baa2b9e6cb0f267a4ba17d8c94143726b1338e47de16a15d
 ```
 Comme nous avons eu dq et p alors nous pouvons en déduire tout les espaces vide de la clé.
 
-Alors nous voulons retrouver q, par définition e∗d=1(modϕ)⇒e∗dq=1(modq−1). Avec notre e = 65537 soit -> e∗dp=1+kp(p−1) -> donc q=e∗dp−1kp+1
+Alors nous voulons retrouver q, par définition e∗d=1(modϕ)⇒e∗dq=1(mod q−1). Avec notre e = 65537 soit -> e∗dp=1+kp(p−1) -> donc q=e∗dp−1kp+1
