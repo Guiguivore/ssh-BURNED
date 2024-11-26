@@ -44,7 +44,7 @@ RSAPrivateKey ::= SEQUENCE {
 Pour pouvoir les retrouver j'ai utilisé un outil qui va me permettre de décoder en base64 puis aprés de me l'encoder en hexadécimal ( 48 par lignes ).
 ![image](https://github.com/user-attachments/assets/8189a07b-aa1e-458b-a1d1-8e7057566bb8)
 
-Donc pour résumer nous avons notre clé en hexadécimal. Pour continuer on va créer une clé publique en 4096 bits afin de comparer
+Donc pour résumer nous avons notre clé en hexadécimal.
 ```bash
 -----BEGIN RSA PRIVATE KEY-----
 3082092a0201000282020100bd387087f686874f6e345a2317dc3eec24ab0ccf6a412a05e5f1040b374b7207be50a014
@@ -67,3 +67,15 @@ e99cbe9bee7fac59eecfa752232f4ff22a292ae2e75e6a36ad9f02820100056d864db21a6071724c
 [                                         Snipped! (x5)                                        ]
 -----END RSA PRIVATE KEY-----
 ```
+
+ Pour continuer on va créer une clé publique en 4096 bits afin de comparer si il y a des similitudes.
+ On remarque que les données qu'on cherche commence toujours par 02 82 01 01, c'est décomposer comme :
+    - 02 signifie le type de donnée, ( ici un Interger)
+    - 82 ce qui signifie que la longueur de la valeur entière sera codée dans les 2 octets suivants
+    - 0101 a longueur réelle, dont la valeur entière est 257, ce qui signifie que la valeur entière sera codée dans les 257        octets suivants.
+
+On va décoder les valeurs des données lisibles
+```bash
+n_upper_bits = 0xbd387087f686874f6e345a2317dc3eec24ab0ccf6a412a05e5f1040b374b7207be50a014
+q_upper_bits = 0xd0ec529444a3a18ebd58be52c9d3983fc0b95299f01e044528d3c5f92533a7e6
+
