@@ -20,3 +20,7 @@ J'ai remarqué que la clé privé est encodée en PEM(privacy-enhaced mail), ell
 
 Donc on en déduit le code présent : ![image](https://github.com/user-attachments/assets/a4cd6d1a-172f-4c55-b737-e626a9752180)
 
+```bash
+#!/bin/bash
+echo "Hello World"
+```
